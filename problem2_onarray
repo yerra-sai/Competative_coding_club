@@ -1,0 +1,53 @@
+#include<iostream>
+#include<ctime>
+using namespace std;
+//Time Complexity of this coode is  O(n)
+void insert(int arr[],int n){
+    for(int i=0;i<n;i++){
+        cin>>arr[i];
+    }
+}
+//Time complexity of this code is O(n)
+void print(int arr[],int n){
+for(int i=0;i<n;i++){
+    cout<<arr[i]<<" ";
+}
+cout<<endl;
+}
+//Time Complexity of this code is O(n)
+int  max(int arr[],int n){
+    int max=arr[0];
+    for(int i=1;i<n;i++){
+        if(max<arr[i]){
+            max=arr[i];
+        }
+    }
+    return max;
+}
+//Time Complexity of this code is O(n)
+int min(int arr[],int n){
+    int min=arr[0];
+    for(int i=1;i<n;i++){
+        if(min>arr[i]){
+            min=arr[i];
+        }
+    }
+    return min;
+}
+int main(){
+    clock_t start,end;
+    start=clock();
+    int n;
+    cout<<"Enter the value of n : ";
+    cin>>n;
+    int arr[n];
+    insert(arr,n);
+    print(arr,n);
+    int result1=max(arr,n);
+    int result2=min(arr,n);
+    cout<<"Maximuum value in this array is : "<<result1<<endl;
+    cout<<"Minimum value in this array is : "<<result2<<endl;
+    end=clock();
+    double time_taken=double(end-start)/double(CLOCKS_PER_SEC);
+    return 0;
+}
